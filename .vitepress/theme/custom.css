@@ -1,0 +1,87 @@
+/* --- 1. サイト全体のカラーシステム（緑に統一） --- */
+:root {
+    /* VitePress内部の基本色を緑に書き換え */
+    --vp-c-brand-1: #2e7d32;
+    --vp-c-brand-2: #43a047;
+    --vp-c-brand-3: #66bb6a;
+    --vp-c-brand-soft: rgba(46, 125, 50, 0.14);
+    
+    /* 青色（Indigo）の変数を直接上書きして青みを一掃 */
+    --vp-c-indigo-1: var(--vp-c-brand-1);
+    --vp-c-indigo-2: var(--vp-c-brand-2);
+    --vp-c-indigo-soft: var(--vp-c-brand-soft);
+  }
+  
+  /* リンクやボタンの色を強制的に緑へ固定 */
+  html {
+    --vp-c-brand-1: #2e7d32 !important;
+  }
+  
+  /* --- 2. 記事内の基本スタイル --- */
+  
+  /* 標準のリンクを緑色にする */
+  .vp-doc a {
+    color: var(--vp-c-brand-1) !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+  }
+  
+  .vp-doc a:hover {
+    opacity: 0.7;
+  }
+  
+  /* 見出しのデザイン */
+  h2 {
+    border-left: 5px solid var(--vp-c-brand-1);
+    padding-left: 15px !important;
+    color: var(--vp-c-brand-1);
+    margin-top: 2em;
+  }
+  
+  h3 {
+    color: var(--vp-c-brand-2);
+    margin-top: 1.5em;
+  }
+  
+  /* カスタムブロック（tip等）の枠線 */
+  .custom-block.tip,
+  .custom-block.info {
+    border-color: var(--vp-c-brand-1) !important;
+  }
+  
+  /* --- 3. コピー用コンポーネント（CopyUrl）のスタイル --- */
+  
+  .copy-url {
+    font-family: var(--vp-font-family-mono);
+    font-size: 0.9em;
+    color: var(--vp-c-brand-1);
+    background-color: var(--vp-c-bg-soft);
+    padding: 3px 6px;
+    border-radius: 4px;
+    cursor: copy;
+    border: 1px solid var(--vp-c-divider);
+  }
+  
+  /* コピー完了バッジ（ここも確実に緑にする） */
+  .copy-badge {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #ffffff !important;
+    background-color: #2e7d32 !important; /* 直接指定で確実に緑 */
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  
+  /* トップページの「ガイドを読む」ボタンの色を調整 */
+:root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(120deg, #2e7d32 0%, #66bb6a 100%);
+  }
+  
+  /* 特徴（Features）カードのアイコン背景をうっすら緑に */
+  .vp-doc .features .feature .icon {
+    background-color: var(--vp-c-brand-soft) !important;
+    border-radius: 8px;
+  }
